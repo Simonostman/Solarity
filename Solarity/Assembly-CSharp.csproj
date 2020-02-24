@@ -51,9 +51,10 @@
      <Compile Include="Assets\PathCreator\Examples\Scripts\PathSceneTool.cs" />
      <Compile Include="Assets\PathCreator\Examples\Scripts\PathSpawner.cs" />
      <Compile Include="Assets\PathCreator\Examples\Scripts\RoadMeshCreator.cs" />
-     <Compile Include="Assets\Scripts\MagneticFieldGenerator.cs" />
+     <Compile Include="Assets\Scripts\Old Scripts\MagneticFieldGenerator.cs" />
+     <Compile Include="Assets\Scripts\Old Scripts\SolarGenerator.cs" />
      <Compile Include="Assets\Scripts\ParallaxController.cs" />
-     <Compile Include="Assets\Scripts\SolarGenerator.cs" />
+     <Compile Include="Assets\Scripts\SolarWindGenerator.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
