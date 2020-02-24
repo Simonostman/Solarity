@@ -239,7 +239,7 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.1f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
- <HintPath>C:/Users/Lukas/Documents/Unity Projects/Solarity/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
+ <HintPath>C:/Users/Lukas/Documents/Unity Projects/SolarityRepo/Solarity/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -637,6 +637,10 @@
       <Project>{8063aea8-3879-a8f1-eb4f-c796cabbd0fa}</Project>
       <Name>Unity.Rider.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="PathCreator.csproj">
+      <Project>{09bfe2dd-cdd5-9c82-f7cd-d7814d79e306}</Project>
+      <Name>PathCreator</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.2D.Sprite.Editor.csproj">
       <Project>{32909902-cdf7-f790-7cfe-38deb16d4161}</Project>
       <Name>Unity.2D.Sprite.Editor</Name>
@@ -649,17 +653,13 @@
       <Project>{3fc5c007-6e46-a59f-af39-20422fff8502}</Project>
       <Name>Unity.TextMeshPro</Name>
     </ProjectReference>
-    <ProjectReference Include="UnityEditor.UI.csproj">
-      <Project>{054ca985-8c7b-5a1e-d23b-76012dd05d9b}</Project>
-      <Name>UnityEditor.UI</Name>
-    </ProjectReference>
-    <ProjectReference Include="PathCreator.csproj">
-      <Project>{09bfe2dd-cdd5-9c82-f7cd-d7814d79e306}</Project>
-      <Name>PathCreator</Name>
-    </ProjectReference>
     <ProjectReference Include="PathCreatorEditor.csproj">
       <Project>{8913cc5d-2d0b-b33c-7bc0-50112fdb0b22}</Project>
       <Name>PathCreatorEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEditor.UI.csproj">
+      <Project>{054ca985-8c7b-5a1e-d23b-76012dd05d9b}</Project>
+      <Name>UnityEditor.UI</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
