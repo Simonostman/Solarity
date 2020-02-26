@@ -20,7 +20,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 411
     y: -146
-    width: 1514
+    width: 1482
     height: 1659
 --- !u!114 &114350483966674976
 MonoBehaviour:
@@ -318,17 +318,17 @@ VisualEffectResource:
       // Need to remove potential scale in local transform\n\t\t\t    axisX = normalize(axisX);\n\t\t\t   
       axisY = normalize(axisY);\n\t\t\t    axisZ = cross(axisX,axisY);\n\t\t\t   
       #else\n\t\t\t    axisZ = -viewRot[2].xyz;\n\t\t\t    #endif\n\t\t\t    \n\t\t\t}\n\t\t\tvoid
-      AttributeFromCurve_48A86161(inout float3 color, inout float alpha, float age,
-      float lifetime, float Color) /*attribute:color Composition:Overwrite AlphaComposition:Overwrite
-      SampleMode:OverLife Mode:PerComponent ColorMode:ColorAndAlpha channels:XYZ
-      */\n\t\t\t{\n\t\t\t    float t = age / lifetime;\n\t\t\t    float4 value =
-      0.0f;\n\t\t\t    value = SampleGradient(Color, t);\n\t\t\t    color = value.rgb;\n\t\t\t   
-      alpha = value.a;\n\t\t\t}\n\t\t\tvoid SetAttribute_D5151642(inout float scaleX,
-      inout float scaleY, inout float scaleZ, float3 Scale) /*attribute:scale Composition:Overwrite
-      Source:Slot Random:Off channels:XYZ */\n\t\t\t{\n\t\t\t    scaleX = Scale.x;\n\t\t\t   
-      scaleY = Scale.y;\n\t\t\t    scaleZ = Scale.z;\n\t\t\t}\n\t\t\t\n\n\t\t\t\n\t\t\t#if
-      defined(HAS_STRIPS) && !defined(VFX_PRIMITIVE_QUAD)\n\t\t\t#error VFX_PRIMITIVE_QUAD
-      must be defined when HAS_STRIPS is.\n\t\t\t#endif\n\t\t\t\n\t\t\tstruct vs_input\n\t\t\t{\n\t\t\t\tVFX_DECLARE_INSTANCE_ID\n\t\t\t};\n\t\t\t\n\t\t\t#if
+      AttributeFromCurve_48A85E4B(inout float3 color, float age, float lifetime,
+      float Color) /*attribute:color Composition:Overwrite AlphaComposition:Overwrite
+      SampleMode:OverLife Mode:PerComponent ColorMode:Color channels:XYZ */\n\t\t\t{\n\t\t\t   
+      float t = age / lifetime;\n\t\t\t    float4 value = 0.0f;\n\t\t\t    value
+      = SampleGradient(Color, t);\n\t\t\t    color = value.rgb;\n\t\t\t}\n\t\t\tvoid
+      SetAttribute_D5151642(inout float scaleX, inout float scaleY, inout float scaleZ,
+      float3 Scale) /*attribute:scale Composition:Overwrite Source:Slot Random:Off
+      channels:XYZ */\n\t\t\t{\n\t\t\t    scaleX = Scale.x;\n\t\t\t    scaleY = Scale.y;\n\t\t\t   
+      scaleZ = Scale.z;\n\t\t\t}\n\t\t\t\n\n\t\t\t\n\t\t\t#if defined(HAS_STRIPS)
+      && !defined(VFX_PRIMITIVE_QUAD)\n\t\t\t#error VFX_PRIMITIVE_QUAD must be defined
+      when HAS_STRIPS is.\n\t\t\t#endif\n\t\t\t\n\t\t\tstruct vs_input\n\t\t\t{\n\t\t\t\tVFX_DECLARE_INSTANCE_ID\n\t\t\t};\n\t\t\t\n\t\t\t#if
       HAS_STRIPS\n\t\t\t#define PARTICLE_IN_EDGE (id & 1)\n\t\t\t\n\t\t\tfloat3 GetParticlePosition(uint
       index)\n\t\t\t{\n\t\t\t\tstruct Attributes attributes = (Attributes)0;\n\t\t\t\tattributes.position
       = asfloat(attributeBuffer.Load3((index * 0x8 + 0xC380) << 2));\n\t\t\t\t\n\n\t\t\t\treturn
@@ -387,12 +387,11 @@ VisualEffectResource:
       * 0x8 + 0xC384) << 2));\n\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t#endif\n\t\t\t\t\t\t\n\t\t\t\t\t\t//
       Initialize built-in needed attributes\n\t\t\t\t\t\t#if HAS_STRIPS\n\t\t\t\t\t\tInitStripAttributes(index,
       attributes, stripData);\n\t\t\t\t\t\t#endif\n\t\t\t\t\t\t\t\n\t\t\t\tOrient_4(
-      /*inout */attributes.axisX,  /*inout */attributes.axisY,  /*inout */attributes.axisZ);\n\t\t\t\tAttributeFromCurve_48A86161(
-      /*inout */attributes.color,  /*inout */attributes.alpha, attributes.age, attributes.lifetime,
-      Color_b);\n\t\t\t\t{\n\t\t\t\t    SetAttribute_D5151642( /*inout */attributes.scaleX, 
-      /*inout */attributes.scaleY,  /*inout */attributes.scaleZ, float3(0.200000003,
-      0.200000003, 0.200000003));\n\t\t\t\t}\n\t\t\t\t\n\n\t\t\t\t\n\t\t\t#if !HAS_STRIPS\n\t\t\t\tif
-      (!attributes.alive)\n\t\t\t\t\treturn o;\n\t\t\t#endif\n\t\t\t\t\n\t\t\t#if
+      /*inout */attributes.axisX,  /*inout */attributes.axisY,  /*inout */attributes.axisZ);\n\t\t\t\tAttributeFromCurve_48A85E4B(
+      /*inout */attributes.color, attributes.age, attributes.lifetime, Color_b);\n\t\t\t\t{\n\t\t\t\t   
+      SetAttribute_D5151642( /*inout */attributes.scaleX,  /*inout */attributes.scaleY, 
+      /*inout */attributes.scaleZ, float3(0.200000003, 0.200000003, 0.200000003));\n\t\t\t\t}\n\t\t\t\t\n\n\t\t\t\t\n\t\t\t#if
+      !HAS_STRIPS\n\t\t\t\tif (!attributes.alive)\n\t\t\t\t\treturn o;\n\t\t\t#endif\n\t\t\t\t\n\t\t\t#if
       VFX_PRIMITIVE_QUAD\n\t\t\t\n\t\t\t#if HAS_STRIPS\n\t\t\t#if VFX_STRIPS_UV_STRECHED\n\t\t\t\to.VFX_VARYING_UV.x
       = (float)(currentIndex) / (stripData.nextIndex - 1);\n\t\t\t#elif VFX_STRIPS_UV_PER_SEGMENT\n\t\t\t\to.VFX_VARYING_UV.x
       = PARTICLE_IN_EDGE;\n\t\t\t#else\n\t\t\t\t\n\t\t\t    o.VFX_VARYING_UV.x =
@@ -2088,7 +2087,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614589}
   - {fileID: 8926484042661614593}
   - {fileID: 8926484042661614604}
-  m_UIPosition: {x: 943, y: 950}
+  m_UIPosition: {x: 942, y: 950}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -2211,7 +2210,7 @@ MonoBehaviour:
   AlphaComposition: 0
   SampleMode: 0
   Mode: 1
-  ColorMode: 3
+  ColorMode: 1
   channels: 6
 --- !u!114 &8926484042661614594
 MonoBehaviour:
