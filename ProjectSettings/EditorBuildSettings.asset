@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Daniel's Scene 1.unity
+    guid: 903589b695a3641488d1de71415174dc
+  - enabled: 1
+    path: Assets/Scenes/Daniel's Scene 2.unity
+    guid: 30056dcc7c6cdfd45ba4713fb4de6069
   m_configObjects: {}
