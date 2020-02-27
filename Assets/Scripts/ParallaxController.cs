@@ -34,11 +34,11 @@ public class ParallaxController : MonoBehaviour
         {
             foreach (Transform sprite in parallaxObjects[i].transform)
             {
-                sprite.position = new Vector3(sprite.transform.position.x - Time.deltaTime * parallaxSprites[i].speed, 0, 0);
+                sprite.position = new Vector3(sprite.transform.position.x - Time.deltaTime * parallaxSprites[i].speed, 0, 100);
                 if(parallaxSprites[i].speed > 0 && sprite.position.x < - parallaxSprites[i].width)
-                    sprite.position = new Vector3(parallaxSprites[i].width, 0, 0);    
+                    sprite.position = new Vector3(parallaxSprites[i].width, 0, 100);    
                 if(parallaxSprites[i].speed < 0 && sprite.position.x > parallaxSprites[i].width)
-                    sprite.position = new Vector3(-parallaxSprites[i].width, 0, 0);
+                    sprite.position = new Vector3(-parallaxSprites[i].width, 0, 100);
             }
         }
     }
@@ -52,11 +52,12 @@ public class ParallaxController : MonoBehaviour
         {
             GameObject objectSprite = new GameObject(name + "_" + i);
             objectSprite.transform.parent = parallaxObject.transform;
+            objectSprite.transform.position = new Vector3(0,0, 100);
 
             SpriteRenderer renderer = objectSprite.AddComponent<SpriteRenderer>();
             renderer.sprite = p.sprite;
             renderer.sortingLayerName = "Parallax";
-            renderer.sortingOrder = p.layer;
+
 
             float boundsWidth = renderer.sprite.bounds.size.x;
             float boundsHeight = renderer.sprite.bounds.size.y;
@@ -64,7 +65,7 @@ public class ParallaxController : MonoBehaviour
             p.width = p.height / Screen.height * Screen.width;
 
             objectSprite.transform.localScale = new Vector3(p.width / boundsWidth, p.height / boundsHeight, 0);
-            objectSprite.transform.position = new Vector3(objectSprite.transform.position.x + (p.width * i), 0, 0);
+            objectSprite.transform.position = new Vector3(objectSprite.transform.position.x + (p.width * i), 0, 100);
         }
 
         return parallaxObject;
