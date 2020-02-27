@@ -5237,14 +5237,20 @@ VisualEffect:
   m_PropertySheet:
     m_Float:
       m_Array:
-      - m_Value: 10
+      - m_Value: 18
         m_Name: Attractive Strength
+        m_Overridden: 1
+      - m_Value: 1.01
+        m_Name: Particle Size
+        m_Overridden: 1
+      - m_Value: 0.0503
+        m_Name: Particle Width
         m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
       m_Array:
-      - m_Value: {x: 27.91, y: -2.66, z: 0}
+      - m_Value: {x: 20.25, y: 2.93, z: 0}
         m_Name: Attract Target Position
         m_Overridden: 1
     m_Vector4f:
@@ -5255,6 +5261,18 @@ VisualEffect:
       m_Array:
       - m_Value: 10000
         m_Name: Number of particles
+        m_Overridden: 1
+      - m_Value: 23
+        m_Name: Arc Duration
+        m_Overridden: 1
+      - m_Value: 0
+        m_Name: Particle Size
+        m_Overridden: 1
+      - m_Value: 50
+        m_Name: Lifetime MAx
+        m_Overridden: 1
+      - m_Value: 2
+        m_Name: Lifetime Min
         m_Overridden: 1
     m_Matrix4x4f:
       m_Array: []
@@ -5305,7 +5323,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1529302383}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.24, y: 2.25, z: 0}
+  m_LocalPosition: {x: 4.17, y: 1.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5550,7 +5568,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2074586262}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 27.91, y: -2.66, z: 0}
+  m_LocalPosition: {x: 20.25, y: 2.93, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
