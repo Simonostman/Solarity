@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Daniel's Scene 2.unity
     guid: 30056dcc7c6cdfd45ba4713fb4de6069
+  - enabled: 1
+    path: Assets/Scenes/Daniel's Scene 3.unity
+    guid: 837ee43c6a5b9854a86210fd3c972ce5
   m_configObjects: {}
