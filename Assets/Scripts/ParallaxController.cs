@@ -52,11 +52,12 @@ public class ParallaxController : MonoBehaviour
         {
             GameObject objectSprite = new GameObject(name + "_" + i);
             objectSprite.transform.parent = parallaxObject.transform;
-            objectSprite.transform.position = new Vector3(0,0, 100);
+            objectSprite.transform.position = new Vector3(0,0,0);
 
             SpriteRenderer renderer = objectSprite.AddComponent<SpriteRenderer>();
             renderer.sprite = p.sprite;
             renderer.sortingLayerName = "Parallax";
+            renderer.sortingOrder = p.layer;
 
 
             float boundsWidth = renderer.sprite.bounds.size.x;
