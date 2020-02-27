@@ -4,25 +4,43 @@ using UnityEngine;
 
 public class SolarWindGenerator : MonoBehaviour
 {
-    List<GameObject> winds = new List<GameObject>();
+    public float windSpeed = 5.0f;
+
+    // Temp
+    public Sprite tempSpriteHodler;
+
+    private List<GameObject> winds = new List<GameObject>();
+    private AttractionPoint[] attractionPoints;
 
     void Start()
     {
+        attractionPoints = FindObjectsOfType<AttractionPoint>();
+
         GameObject windParent = new GameObject("Winds");
         for (int i = 0; i < 10; i++)
         {
             GameObject wind = new GameObject("Wind");
             wind.transform.parent = windParent.transform;
+
             Rigidbody2D rigid = wind.AddComponent<Rigidbody2D>();
             rigid.gravityScale = 0;
+            rigid.AddForce(Vector2.left * windSpeed);
+
+            SpriteRenderer renderer = wind.AddComponent<SpriteRenderer>();
+            renderer.sprite = tempSpriteHodler;
+
+            winds.Add(wind);
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        foreach (var wind in winds)
+        foreach (var point in attractionPoints)
         {
-            wind.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 0.1f);
+            Vector3 lookDir = (point.transform.position - transform.position).normalized;
+            Quaternion lookRot = Quaternion.LookRotation(lookDir);
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRot, Time.deltaTime * 5);
+            Debug.Log(lookDir);
         }
     }
 }
