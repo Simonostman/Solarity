@@ -4,43 +4,53 @@ using UnityEngine;
 
 public class SolarWindGenerator : MonoBehaviour
 {
+    [Header("Wind Properties")]
     public float windSpeed = 5.0f;
+    public float lifetime = 5.0f;
+
+    [Header("Generator Properties")]
+    public float spanwFrequency = 10;
+
+    private List<GameObject> winds = new List<GameObject>();
+    private float spawnTimer;
 
     // Temp
     public Sprite tempSpriteHodler;
 
-    private List<GameObject> winds = new List<GameObject>();
-    private AttractionPoint[] attractionPoints;
-
-    void Start()
-    {
-        attractionPoints = FindObjectsOfType<AttractionPoint>();
-
-        GameObject windParent = new GameObject("Winds");
-        for (int i = 0; i < 10; i++)
-        {
-            GameObject wind = new GameObject("Wind");
-            wind.transform.parent = windParent.transform;
-
-            Rigidbody2D rigid = wind.AddComponent<Rigidbody2D>();
-            rigid.gravityScale = 0;
-            rigid.AddForce(Vector2.left * windSpeed);
-
-            SpriteRenderer renderer = wind.AddComponent<SpriteRenderer>();
-            renderer.sprite = tempSpriteHodler;
-
-            winds.Add(wind);
-        }
-    }
-
     void FixedUpdate()
     {
-        foreach (var point in attractionPoints)
+        spawnTimer += Time.deltaTime  % 60.0f;
+        if(spawnTimer * spanwFrequency > 1)
         {
-            Vector3 lookDir = (point.transform.position - transform.position).normalized;
-            Quaternion lookRot = Quaternion.LookRotation(lookDir);
-            transform.rotation = Quaternion.Slerp(transform.rotation, lookRot, Time.deltaTime * 5);
-            Debug.Log(lookDir);
+            SpawnWind();
+            spawnTimer = 0;
         }
+
+        GameObject deleteObject = null;
+        foreach (var w in winds)
+        {
+            if(w.GetComponent<SolarWindController>().dead)
+            {
+                deleteObject = w;
+                continue;
+            }
+        }
+
+        winds.Remove(deleteObject);
+        Destroy(deleteObject);
+    }
+
+    void SpawnWind()
+    {
+        GameObject wind = new GameObject("Wind");
+        wind.transform.position = transform.position;
+        wind.transform.parent = transform;
+
+        SolarWindController swc = wind.AddComponent<SolarWindController>();
+        swc.windSpeed = windSpeed;
+        swc.tempSpriteHodler = tempSpriteHodler;
+        swc.lifetime = lifetime;
+
+        winds.Add(wind);
     }
 }
