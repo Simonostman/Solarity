@@ -9,6 +9,7 @@ public class LevelLoader : MonoBehaviour
     public static LevelLoader instance;
 
     private GameObject transitionAnimation;
+    private bool transitioning;
 
     private void Awake()
     {
@@ -29,6 +30,11 @@ public class LevelLoader : MonoBehaviour
         transitionAnimation.SetActive(false);
     }
 
+    private void Start()
+    {
+        transitioning = false;
+    }
+
     private void Update()
     {
         if (Input.GetKey(KeyCode.N))
@@ -39,7 +45,12 @@ public class LevelLoader : MonoBehaviour
 
     public void GoToScene(string sceneType)
     {
-        StartCoroutine(SceneTransition(sceneType));
+        if (!transitioning)
+        {
+            StartCoroutine(SceneTransition(sceneType));
+
+            transitioning = true;
+        }
     }
 
     private IEnumerator SceneTransition(string sceneType)
@@ -80,5 +91,7 @@ public class LevelLoader : MonoBehaviour
         transitionAnimation = Instantiate(transitionAnimationReference, transform.transform.Find("Transition Canvas").Find("Transition"));
 
         transitionAnimation.SetActive(false);
+
+        transitioning = false;
     }
 }
