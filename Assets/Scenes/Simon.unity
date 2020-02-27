@@ -507,7 +507,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 487890211}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.9, y: -0.02, z: -1}
+  m_LocalPosition: {x: -7.9, y: -0.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1155,22 +1155,22 @@ PrefabInstance:
     - target: {fileID: 3006000486264831540, guid: eaaacb2948654bc488cc74671cc469fa,
         type: 3}
       propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[0].m_Value.x
-      value: 21.35
+      value: -21.529999
       objectReference: {fileID: 0}
     - target: {fileID: 3006000486264831540, guid: eaaacb2948654bc488cc74671cc469fa,
         type: 3}
       propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[0].m_Value.y
-      value: 0.9
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 3006000486264831540, guid: eaaacb2948654bc488cc74671cc469fa,
         type: 3}
       propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[0].m_Value.z
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3006000486264831540, guid: eaaacb2948654bc488cc74671cc469fa,
         type: 3}
       propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Value
-      value: -15
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3006000486264831540, guid: eaaacb2948654bc488cc74671cc469fa,
         type: 3}
@@ -1325,17 +1325,17 @@ PrefabInstance:
     - target: {fileID: 3006000486810099676, guid: eaaacb2948654bc488cc74671cc469fa,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.54
+      value: -30.34
       objectReference: {fileID: 0}
     - target: {fileID: 3006000486810099676, guid: eaaacb2948654bc488cc74671cc469fa,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.81
+      value: 0.16
       objectReference: {fileID: 0}
     - target: {fileID: 3006000486810099676, guid: eaaacb2948654bc488cc74671cc469fa,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eaaacb2948654bc488cc74671cc469fa, type: 3}
