@@ -24,8 +24,8 @@ public class LevelLoader : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
-
-        transitionAnimation = Instantiate(transitionAnimationReference, transform.transform.Find("Transition Canvas").Find("Transition"));
+        
+        transitionAnimation = Instantiate(transitionAnimationReference, transform.transform.Find("Transition Canvas"));
 
         transitionAnimation.SetActive(false);
     }
