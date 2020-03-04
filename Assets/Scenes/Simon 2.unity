@@ -687,7 +687,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 432644, guid: c2e22098ce7c8da4590cceb5113bd50e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.11
+      value: 8.49
       objectReference: {fileID: 0}
     - target: {fileID: 432644, guid: c2e22098ce7c8da4590cceb5113bd50e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1017,6 +1017,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6b9e04181bc0954eafe1c373ec297ae, type: 3}
+--- !u!1 &885187776
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 885187777}
+  m_Layer: 0
+  m_Name: Magnetosphere
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &885187777
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885187776}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -56, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 758748642}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &980412045 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4366244473364706924, guid: 41981b1ce3dace04eb20d8bb40c2bf0f,
@@ -1221,7 +1251,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Target
       value: 
-      objectReference: {fileID: 758748642}
+      objectReference: {fileID: 885187777}
     - target: {fileID: 3006000486264831530, guid: eaaacb2948654bc488cc74671cc469fa,
         type: 3}
       propertyPath: m_Name
@@ -1410,12 +1440,12 @@ PrefabInstance:
     - target: {fileID: 3006000486810099676, guid: eaaacb2948654bc488cc74671cc469fa,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 36.62
+      value: 27.31
       objectReference: {fileID: 0}
     - target: {fileID: 3006000486810099676, guid: eaaacb2948654bc488cc74671cc469fa,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.16
+      value: -0.11
       objectReference: {fileID: 0}
     - target: {fileID: 3006000486810099676, guid: eaaacb2948654bc488cc74671cc469fa,
         type: 3}
@@ -1430,12 +1460,12 @@ PrefabInstance:
     - target: {fileID: 4144322951359608966, guid: eaaacb2948654bc488cc74671cc469fa,
         type: 3}
       propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[0].m_Value.x
-      value: 27.63
+      value: 18.32
       objectReference: {fileID: 0}
     - target: {fileID: 4144322951359608966, guid: eaaacb2948654bc488cc74671cc469fa,
         type: 3}
       propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[0].m_Value.y
-      value: 0.28
+      value: 0.009999998
       objectReference: {fileID: 0}
     - target: {fileID: 4144322951359608966, guid: eaaacb2948654bc488cc74671cc469fa,
         type: 3}
@@ -1450,7 +1480,7 @@ PrefabInstance:
     - target: {fileID: 4144322951359608966, guid: eaaacb2948654bc488cc74671cc469fa,
         type: 3}
       propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[2].m_Value.x
-      value: 8.11
+      value: 7.073424
       objectReference: {fileID: 0}
     - target: {fileID: 4144322951359608966, guid: eaaacb2948654bc488cc74671cc469fa,
         type: 3}
