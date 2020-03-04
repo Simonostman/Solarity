@@ -1,35 +1,66 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class SolarWindController : MonoBehaviour
 {
     public float windSpeed = 2.0f;
     public float lifetime = 5.0f;
-    public ParticleSystem effect;
     public bool dead = false;
 
     private Rigidbody2D rigid;
-    private SpriteRenderer render;
     private AttractionPoint[] attractionPoints;
     private float lifeTimer;
 
+    // Effect
+    public GameObject effect;
+    public GameObject effectPrefab;
+    private EffectPositionHandler eph;
+
+    public GameObject effect2;
+    public GameObject effect2Prefab;
+
+
     // Temp
-    public Sprite tempSpriteHodler;
+    // private SpriteRenderer render;
+    // public Sprite tempSpriteHodler;
 
     void Start()
     {
         rigid = gameObject.AddComponent<Rigidbody2D>();
         rigid.gravityScale = 0;
 
-        render = gameObject.AddComponent<SpriteRenderer>();
-        render.sprite = tempSpriteHodler;
+        // render = gameObject.AddComponent<SpriteRenderer>();
+        // render.sprite = tempSpriteHodler;
+    }
+
+    public void UpdateEffectPosition(Transform parent)
+    {
+        // if(effect == null)
+        // {
+        //     effect = Instantiate(effectPrefab);
+        //     effect.transform.parent = parent;
+        //     eph = effect.GetComponent<EffectPositionHandler>();
+        // }
+
+        // eph.target.transform.position = transform.position;
+        // eph.effect.transform.position = parent.position;
+
+        if(effect2 == null)
+        {
+            effect2 = Instantiate(effect2Prefab, parent);
+            effect2.transform.position = transform.position;
+        }
+        else
+        {
+            effect2.transform.position = transform.position;
+        }
     }
 
     private void FixedUpdate()
     {
         attractionPoints = FindObjectsOfType<AttractionPoint>();
-
         foreach (var point in attractionPoints)
         {
             if(point.activated)
@@ -50,6 +81,7 @@ public class SolarWindController : MonoBehaviour
         lifeTimer += Time.deltaTime % 60;
         if(lifeTimer > lifetime)
         {
+            //effect.GetComponent<EffectPositionHandler>().Stop();
             dead = true;
         }
     }
