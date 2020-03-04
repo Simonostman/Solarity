@@ -6,6 +6,7 @@ public class SolarWindController : MonoBehaviour
 {
     public float windSpeed = 2.0f;
     public float lifetime = 5.0f;
+    public ParticleSystem effect;
     public bool dead = false;
 
     private Rigidbody2D rigid;
@@ -40,7 +41,7 @@ public class SolarWindController : MonoBehaviour
                 float dst = Vector3.Distance(transform.position, point.transform.position);
                 float pull = point.GetComponent<AttractionPoint>().gravityStrenght / Mathf.Pow(dst, 2);
 
-                transform.rotation = Quaternion.Slerp(transform.rotation, lookRot, Time.deltaTime * pull);   
+                transform.rotation = Quaternion.Slerp(transform.rotation, lookRot, Time.deltaTime * pull);
             }
         }
 
