@@ -31,17 +31,20 @@ public class SolarWindController : MonoBehaviour
 
         foreach (var point in attractionPoints)
         {
-            float dst = Vector3.Distance(transform.position, point.transform.position);
+            if(point.activated)
+            {
+                Vector3 lookDir = (point.transform.position - transform.position).normalized;
+                float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
+                Quaternion lookRot = Quaternion.AngleAxis(angle, Vector3.forward);
+                
+                float dst = Vector3.Distance(transform.position, point.transform.position);
+                float pull = point.GetComponent<AttractionPoint>().gravityStrenght / Mathf.Pow(dst, 2);
 
-            Vector3 lookDir = -(point.transform.position - transform.position).normalized;
-            float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
-            Quaternion lookRot = Quaternion.AngleAxis(angle, Vector3.forward);
-            
-            float pull = point.GetComponent<AttractionPoint>().gravityStrenght / Mathf.Pow(dst, 2);
-
-            transform.rotation = Quaternion.Slerp(transform.rotation, lookRot, Time.deltaTime * pull);
-            GetComponent<Rigidbody2D>().velocity = -transform.right * windSpeed;
+                transform.rotation = Quaternion.Slerp(transform.rotation, lookRot, Time.deltaTime * pull);   
+            }
         }
+
+        GetComponent<Rigidbody2D>().velocity = transform.right * windSpeed;
 
         lifeTimer += Time.deltaTime % 60;
         if(lifeTimer > lifetime)

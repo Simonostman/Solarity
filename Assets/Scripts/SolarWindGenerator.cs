@@ -10,6 +10,7 @@ public class SolarWindGenerator : MonoBehaviour
 
     [Header("Generator Properties")]
     public float spanwFrequency = 10;
+    public float maxAngle = 10.0f;
 
     private List<GameObject> winds = new List<GameObject>();
     private float spawnTimer;
@@ -38,18 +39,22 @@ public class SolarWindGenerator : MonoBehaviour
 
         winds.Remove(deleteObject);
         Destroy(deleteObject);
+
     }
 
     void SpawnWind()
     {
         GameObject wind = new GameObject("Wind");
         wind.transform.position = transform.position;
+
+        wind.transform.rotation = transform.rotation;
+        
         wind.transform.parent = transform;
 
         SolarWindController swc = wind.AddComponent<SolarWindController>();
         swc.windSpeed = windSpeed;
-        swc.tempSpriteHodler = tempSpriteHodler;
         swc.lifetime = lifetime;
+        swc.tempSpriteHodler = tempSpriteHodler;
 
         winds.Add(wind);
     }
