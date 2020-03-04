@@ -7,6 +7,7 @@ public class SolarWindGenerator : MonoBehaviour
     [Header("Wind Properties")]
     public float windSpeed = 5.0f;
     public float lifetime = 5.0f;
+    public ParticleSystem effect;
 
     [Header("Generator Properties")]
     public float spanwFrequency = 10;
@@ -46,9 +47,7 @@ public class SolarWindGenerator : MonoBehaviour
     {
         GameObject wind = new GameObject("Wind");
         wind.transform.position = transform.position;
-
         wind.transform.rotation = transform.rotation;
-        
         wind.transform.parent = transform;
 
         SolarWindController swc = wind.AddComponent<SolarWindController>();

@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   windSpeed: 3
-  lifetime: 5
+  lifetime: 10
   spanwFrequency: 20
+  maxAngle: 10
   tempSpriteHodler: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
