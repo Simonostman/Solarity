@@ -1,23 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
+
 
 public class SolarWindGenerator : MonoBehaviour
 {
     [Header("Wind Properties")]
     public float windSpeed = 5.0f;
     public float lifetime = 5.0f;
-    public ParticleSystem effect;
+    public GameObject effectPrefab;
+    public GameObject effect2Prefab;
 
     [Header("Generator Properties")]
     public float spanwFrequency = 10;
     public float maxAngle = 10.0f;
 
     private List<GameObject> winds = new List<GameObject>();
+    private List<GameObject> effects = new List<GameObject>();
     private float spawnTimer;
 
     // Temp
-    public Sprite tempSpriteHodler;
+    // public Sprite tempSpriteHodler;
 
     void FixedUpdate()
     {
@@ -29,12 +33,21 @@ public class SolarWindGenerator : MonoBehaviour
         }
 
         GameObject deleteObject = null;
-        foreach (var w in winds)
+        for (int i = 0; i < winds.Count; i++)
         {
-            if(w.GetComponent<SolarWindController>().dead)
+            SolarWindController swc = winds[i].GetComponent<SolarWindController>();
+            swc.UpdateEffectPosition(transform);
+
+            if(swc.dead)
             {
-                deleteObject = w;
-                continue;
+                swc.effect2.GetComponent<ParticleSystem>().Stop();
+                if(swc.effect2.GetComponent<ParticleSystem>().particleCount == 0)
+                {
+                    Debug.Log("Dead");
+                    Destroy(swc.effect2.gameObject);
+                    deleteObject = winds[i];
+                    continue;
+                }
             }
         }
 
@@ -53,7 +66,11 @@ public class SolarWindGenerator : MonoBehaviour
         SolarWindController swc = wind.AddComponent<SolarWindController>();
         swc.windSpeed = windSpeed;
         swc.lifetime = lifetime;
-        swc.tempSpriteHodler = tempSpriteHodler;
+        swc.effect2Prefab = effect2Prefab;
+        swc.effectPrefab = effectPrefab;
+
+        // Temp
+        // swc.tempSpriteHodler = tempSpriteHodler;
 
         winds.Add(wind);
     }
