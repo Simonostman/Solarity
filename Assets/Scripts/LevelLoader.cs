@@ -24,8 +24,8 @@ public class LevelLoader : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
-
-        transitionAnimation = Instantiate(transitionAnimationReference, transform.transform.Find("Transition Canvas").Find("Transition"));
+        
+        transitionAnimation = Instantiate(transitionAnimationReference, transform.transform.Find("Transition Canvas"));
 
         transitionAnimation.SetActive(false);
     }
@@ -39,7 +39,7 @@ public class LevelLoader : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.N))
         {
-            GoToScene("Next");
+            GoToScene("MainScene");
         }
     }
 
@@ -88,10 +88,12 @@ public class LevelLoader : MonoBehaviour
 
         Destroy(transitionAnimation);
 
-        transitionAnimation = Instantiate(transitionAnimationReference, transform.transform.Find("Transition Canvas").Find("Transition"));
+        transitionAnimation = Instantiate(transitionAnimationReference, transform.transform.Find("Transition Canvas"));
 
         transitionAnimation.SetActive(false);
 
         transitioning = false;
+
+        Debug.Log("Transition Reset");
     }
 }
