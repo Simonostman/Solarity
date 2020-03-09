@@ -117,7 +117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xRotation: 0
   yRotation: 0
-  zRotation: 0
+  zRotation: -5
 --- !u!1001 &2683985802843975340
 PrefabInstance:
   m_ObjectHideFlags: 0
