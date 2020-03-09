@@ -5,10 +5,14 @@ using UnityEngine;
 public class Rotation : MonoBehaviour
 {
 
+    public float xRotation;
+    public float yRotation;
+    public float zRotation;
+
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.Rotate(new Vector3(0f, -10f, 0f) * Time.deltaTime);
+        transform.Rotate(new Vector3(xRotation, yRotation, zRotation) * Time.deltaTime);
     }
 }
