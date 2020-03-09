@@ -43,7 +43,6 @@ public class SolarWindGenerator : MonoBehaviour
                 swc.effect2.GetComponent<ParticleSystem>().Stop();
                 if(swc.effect2.GetComponent<ParticleSystem>().particleCount == 0)
                 {
-                    Debug.Log("Dead");
                     Destroy(swc.effect2.gameObject);
                     deleteObject = winds[i];
                     continue;
