@@ -21,18 +21,10 @@ public class SolarWindController : MonoBehaviour
     public GameObject effect2;
     public GameObject effect2Prefab;
 
-
-    // Temp
-    // private SpriteRenderer render;
-    // public Sprite tempSpriteHodler;
-
     void Start()
     {
         rigid = gameObject.AddComponent<Rigidbody2D>();
         rigid.gravityScale = 0;
-
-        // render = gameObject.AddComponent<SpriteRenderer>();
-        // render.sprite = tempSpriteHodler;
     }
 
     public void UpdateEffectPosition(Transform parent)

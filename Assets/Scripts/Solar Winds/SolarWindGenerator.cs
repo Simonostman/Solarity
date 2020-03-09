@@ -62,6 +62,9 @@ public class SolarWindGenerator : MonoBehaviour
         wind.transform.rotation = transform.rotation;
         wind.transform.parent = transform;
 
+        BoxCollider2D collider = wind.AddComponent<BoxCollider2D>();
+        collider.isTrigger = true;
+
         SolarWindController swc = wind.AddComponent<SolarWindController>();
         swc.windSpeed = windSpeed;
         swc.lifetime = lifetime;
