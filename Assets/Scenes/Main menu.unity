@@ -677,7 +677,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -164.39}
+  m_AnchoredPosition: {x: 0, y: -179.54997}
   m_SizeDelta: {x: 130.6, y: 51.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &611295513
@@ -1055,8 +1055,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 67.59999}
-  m_SizeDelta: {x: 0.00012207, y: 1.28}
+  m_AnchoredPosition: {x: 127, y: -12.76}
+  m_SizeDelta: {x: 350.3, y: -159.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &837573383
 MonoBehaviour:
@@ -1076,8 +1076,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Daniel Michaneck\nErik Glastra\nJulia Iljina\nLukas Clausson\nOliver Marklund\nSimon
-    \xD6stman"
+  m_text: "Lead Programmer - Lukas Clausson\nProgrammer - Daniel Michaneck\n\nDesigner
+    - Simon \xD6stman\nVFX      -     Erik Glastra\n2D Artist - Julia Iljina\n3D
+    Artist - Oliver Marklund"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -1112,7 +1113,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_textAlignment: 514
+  m_textAlignment: 513
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -1143,15 +1144,15 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 158.23065, z: 0, w: 0}
+  m_margin: {x: 0, y: -0.99612427, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 837573383}
-    characterCount: 86
+    characterCount: 168
     spriteCount: 0
-    spaceCount: 11
-    wordCount: 12
+    spaceCount: 36
+    wordCount: 27
     linkCount: 0
-    lineCount: 6
+    lineCount: 7
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -1866,7 +1867,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 9.2}
-  m_SizeDelta: {x: 277.3, y: 410.9}
+  m_SizeDelta: {x: 532.1, y: 555.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2014582180
 MonoBehaviour:
