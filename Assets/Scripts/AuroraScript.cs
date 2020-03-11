@@ -39,6 +39,33 @@ public class Aurora
         return returnCol;
     }
 
+    public Gradient GetGradient()
+    {
+        Gradient gradient = new Gradient();
+        GradientColorKey[] colorKey = new GradientColorKey[4];
+        GradientAlphaKey[] alphaKey = new GradientAlphaKey[2];
+
+        Color[] colours = GetColours();
+
+        colorKey[0].color = colours[0];
+        colorKey[0].time = 0f;
+        colorKey[1].color = colours[1];
+        colorKey[1].time = 0.33f;
+        colorKey[2].color = colours[2];
+        colorKey[2].time = 0.67f;
+        colorKey[3].color = new Color(1, 1, 1, 0);
+        colorKey[3].time = 1f;
+
+        alphaKey[0].alpha = 1f;
+        alphaKey[0].time = 0f;
+        alphaKey[1].alpha = 1f;
+        alphaKey[1].time = 1f;
+
+        gradient.SetKeys(colorKey, alphaKey);
+
+        return gradient;
+    }
+
     //public Color GetColor()
     //{
     //    Color returnCol = new Color((hue1.y + hue2.y + hue3.y) / 3, (hue1.x + hue2.x + hue3.x) / 3, ((hue1.x + hue2.x + hue3.x) / 3 + (hue1.y + hue2.y + hue3.y) / 3) / 2, intensity);
