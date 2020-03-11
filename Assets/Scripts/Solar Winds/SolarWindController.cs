@@ -42,7 +42,7 @@ public class SolarWindController : MonoBehaviour
         attractionPoints = FindObjectsOfType<AttractionPoint>();
         foreach (var point in attractionPoints)
         {
-            Vector3 lookDir = (point.transform.position - transform.position).normalized;
+            Vector3 lookDir = (point.satellite.transform.position - transform.position).normalized;
             float angle;
             if(point.negativePolarity)  angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
             else                        angle = -Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
