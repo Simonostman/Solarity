@@ -32,6 +32,19 @@ public class Aurora
         hue3 = intensity;
     }
 
+    public void SetIntensity(float setIn)
+    {
+       
+
+        intensity = setIn;
+
+        intensity = Mathf.Clamp(intensity, 0f, 1f);
+
+        hue1 = intensity;
+        hue2 = intensity;
+        hue3 = intensity;
+    }
+
     public Color[] GetColours()
     {
         Color[] returnCol = new Color[] { GetHue(1, hue1), GetHue(2, hue2), GetHue(3, hue3)};
