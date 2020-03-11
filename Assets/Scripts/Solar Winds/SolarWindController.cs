@@ -44,7 +44,7 @@ public class SolarWindController : MonoBehaviour
         {
             Vector3 lookDir = (point.transform.position - transform.position).normalized;
             float angle;
-            if(point.positivePolarity)  angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
+            if(point.negativePolarity)  angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
             else                        angle = -Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
             Quaternion lookRot = Quaternion.AngleAxis(angle, Vector3.forward);
             
