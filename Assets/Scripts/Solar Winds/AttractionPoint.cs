@@ -5,11 +5,13 @@ using PathCreation;
 
 public class AttractionPoint : MonoBehaviour
 {
-    public bool positivePolarity = true;
+    public bool negativePolarity = true;
     [Range(0.0f, 20.0f)]
     public float gravityStrenght = 5.0f;
 
     private GameObject satellite;
+    private GameObject waveIn;
+    private GameObject waveOut;
     private PathCreator pathCreator;
     private LineRenderer lineRenderer;
 
@@ -18,6 +20,8 @@ public class AttractionPoint : MonoBehaviour
     void Start()
     {
         satellite = transform.Find("Satellite").gameObject;
+        waveIn = transform.Find("WaveIn").gameObject;
+        waveOut = transform.Find("WaveOut").gameObject;
         pathCreator = GetComponentInChildren<PathCreator>();
         lineRenderer = GetComponentInChildren<LineRenderer>();
 
@@ -37,12 +41,25 @@ public class AttractionPoint : MonoBehaviour
     private void FixedUpdate()
     {
         GetComponent<CircleCollider2D>().offset = new Vector2(satellite.transform.localPosition.x, 0);
+        waveIn.transform.position = satellite.transform.position;
+        waveOut.transform.position = satellite.transform.position;
+
+        if(negativePolarity)
+        {
+            waveOut.SetActive(false);
+            waveIn.SetActive(true);
+        }
+        else
+        {
+            waveOut.SetActive(true); 
+            waveIn.SetActive(false);
+        }
     }
 
     private void OnMouseOver()
     {
         if(Input.GetMouseButtonDown(0))
-            positivePolarity = !positivePolarity;
+            negativePolarity = !negativePolarity;
 
         if(Input.GetMouseButton(1))
         {
