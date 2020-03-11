@@ -10,14 +10,12 @@ public class SolarWindGenerator : MonoBehaviour
     public float windSpeed = 5.0f;
     public float lifetime = 5.0f;
     public GameObject effectPrefab;
-    public GameObject effect2Prefab;
 
     [Header("Generator Properties")]
     public float spanwFrequency = 10;
     public float maxAngle = 10.0f;
 
     private List<GameObject> winds = new List<GameObject>();
-    private List<GameObject> effects = new List<GameObject>();
     private float spawnTimer;
 
     // Temp
@@ -40,10 +38,10 @@ public class SolarWindGenerator : MonoBehaviour
 
             if(swc.dead)
             {
-                swc.effect2.GetComponent<ParticleSystem>().Stop();
-                if(swc.effect2.GetComponent<ParticleSystem>().particleCount == 0)
+                swc.effect.GetComponent<ParticleSystem>().Stop();
+                if(swc.effect.GetComponent<ParticleSystem>().particleCount == 0)
                 {
-                    Destroy(swc.effect2.gameObject);
+                    Destroy(swc.effect.gameObject);
                     deleteObject = winds[i];
                     continue;
                 }
@@ -52,7 +50,6 @@ public class SolarWindGenerator : MonoBehaviour
 
         winds.Remove(deleteObject);
         Destroy(deleteObject);
-
     }
 
     void SpawnWind()
@@ -68,7 +65,6 @@ public class SolarWindGenerator : MonoBehaviour
         SolarWindController swc = wind.AddComponent<SolarWindController>();
         swc.windSpeed = windSpeed;
         swc.lifetime = lifetime;
-        swc.effect2Prefab = effect2Prefab;
         swc.effectPrefab = effectPrefab;
 
         // Temp
