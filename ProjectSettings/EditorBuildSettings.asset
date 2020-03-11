@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Simon 2.unity
     guid: 36382b006de23d346a144385f775b361
   - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 0
     path: Assets/Scenes/Daniel's Scene 1.unity
     guid: 903589b695a3641488d1de71415174dc
   - enabled: 0
@@ -20,4 +17,16 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Daniel's Scene 3.unity
     guid: 837ee43c6a5b9854a86210fd3c972ce5
+  - enabled: 1
+    path: Assets/Scenes/MainScene Level 1.unity
+    guid: 3642d6dc9b5016f47abe9e7649ca046f
+  - enabled: 1
+    path: Assets/Scenes/MainScene Level 2.unity
+    guid: 18d16836e9976f14aa75d3359db68d11
+  - enabled: 1
+    path: Assets/Scenes/MainScene Level 3.unity
+    guid: c295c43f5b550d44cbe3adab28583461
+  - enabled: 1
+    path: Assets/Scenes/MainScene Level 4.unity
+    guid: aad2152de68c1cb4b87e92c56721d260
   m_configObjects: {}
