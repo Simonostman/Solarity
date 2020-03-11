@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using PathCreation;
@@ -8,14 +9,16 @@ public class AttractionPoint : MonoBehaviour
     public bool negativePolarity = true;
     [Range(0.0f, 20.0f)]
     public float gravityStrenght = 5.0f;
-
-    private GameObject satellite;
+    
+    [HideInInspector] public GameObject satellite;
     private GameObject waveIn;
     private GameObject waveOut;
     private PathCreator pathCreator;
     private LineRenderer lineRenderer;
 
-    private float pathLenght;
+    private float pathLenght, currentPathPos;
+    private Vector3 prevMousePos, currentMousePos;
+    private bool dragging = false;
 
     void Start()
     {
@@ -28,18 +31,26 @@ public class AttractionPoint : MonoBehaviour
         if(lineRenderer != null)
         {
             lineRenderer.sortingOrder = -10;
-            lineRenderer.SetPositions(pathCreator.path.localPoints);
+            Vector3[] points = pathCreator.path.localPoints;
+            if(transform.eulerAngles.z % 360 > 90 || transform.eulerAngles.z % 360 < -90)
+            {
+                Array.Reverse(points);
+                Debug.Log(transform.eulerAngles.z % 360);
+            }
+            lineRenderer.SetPositions(points);
+
         }
 
         if(pathCreator != null)
         {
             pathLenght = pathCreator.path.length;
-            satellite.transform.position = pathCreator.path.GetPointAtDistance(pathLenght / 4, EndOfPathInstruction.Stop);
+            currentPathPos = pathLenght / 4;
         }
     }
 
     private void FixedUpdate()
     {
+        satellite.transform.position = pathCreator.path.GetPointAtDistance(currentPathPos, EndOfPathInstruction.Stop);
         GetComponent<CircleCollider2D>().offset = new Vector2(satellite.transform.localPosition.x, 0);
         waveIn.transform.position = satellite.transform.position;
         waveOut.transform.position = satellite.transform.position;
@@ -54,6 +65,26 @@ public class AttractionPoint : MonoBehaviour
             waveOut.SetActive(true); 
             waveIn.SetActive(false);
         }
+
+        if(dragging)
+        {
+            currentMousePos = Input.mousePosition;
+            if(currentMousePos.x > prevMousePos.x && currentPathPos < pathLenght)
+            {
+                currentPathPos += Vector3.Distance(Camera.main.ScreenToWorldPoint(currentMousePos), Camera.main.ScreenToWorldPoint(prevMousePos));
+                prevMousePos = currentMousePos;
+            }
+            if(currentMousePos.x < prevMousePos.x && currentPathPos > 0)
+            {
+                currentPathPos -= Vector3.Distance(Camera.main.ScreenToWorldPoint(currentMousePos), Camera.main.ScreenToWorldPoint(prevMousePos));
+                prevMousePos = currentMousePos;
+            }
+        }
+    }
+
+    private void Update() {
+        if(Input.GetMouseButtonUp(1))
+            dragging = false;
     }
 
     private void OnMouseOver()
@@ -61,15 +92,10 @@ public class AttractionPoint : MonoBehaviour
         if(Input.GetMouseButtonDown(0))
             negativePolarity = !negativePolarity;
 
-        if(Input.GetMouseButton(1))
+        if(Input.GetMouseButtonDown(1))
         {
-            
+            prevMousePos = currentMousePos = Input.mousePosition;
+            dragging = true;
         }
-    }
-
-
-    void Update()
-    {
-        
     }
 }
