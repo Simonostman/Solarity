@@ -44,10 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   windSpeed: 3
-  lifetime: 20
-  effectPrefab: {fileID: 3715073476660736842, guid: 547f4455ac6853a4d992c268756c6534,
-    type: 3}
-  effect2Prefab: {fileID: 6015062693111309182, guid: 57ec3cfb1556b5c4d9f1dd86de920c02,
+  lifetime: 10
+  effectPrefab: {fileID: 6015062693111309182, guid: 57ec3cfb1556b5c4d9f1dd86de920c02,
     type: 3}
   spanwFrequency: 7
   maxAngle: 10
