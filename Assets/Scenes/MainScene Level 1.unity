@@ -893,7 +893,7 @@ PrefabInstance:
     - target: {fileID: 3871237624753982441, guid: d6b9e04181bc0954eafe1c373ec297ae,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0016605854
+      value: -1.27
       objectReference: {fileID: 0}
     - target: {fileID: 3871237624753982441, guid: d6b9e04181bc0954eafe1c373ec297ae,
         type: 3}
@@ -939,6 +939,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3871237624753982442, guid: d6b9e04181bc0954eafe1c373ec297ae,
+        type: 3}
+      propertyPath: gravityStrenght
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3871237624753982443, guid: d6b9e04181bc0954eafe1c373ec297ae,
         type: 3}
@@ -1625,6 +1630,12 @@ PrefabInstance:
       propertyPath: spanwFrequency
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6019483482751309309, guid: ddf3a975e87dccd4f91980f8f2d05cba,
+        type: 3}
+      propertyPath: effect2Prefab
+      value: 
+      objectReference: {fileID: 1255984087937526486, guid: f90fc988406f68e439a0a1a328fc1b02,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddf3a975e87dccd4f91980f8f2d05cba, type: 3}
 --- !u!1 &1750150744
