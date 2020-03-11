@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ae2d4030fe8f8a43aaf9669518ea308, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  positivePolarity: 1
-  gravityStrenght: 5
+  negativePolarity: 0
+  gravityStrenght: 10
 --- !u!58 &8583957398989262274
 CircleCollider2D:
   m_ObjectHideFlags: 0
