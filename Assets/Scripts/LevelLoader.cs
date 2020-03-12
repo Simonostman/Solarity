@@ -28,9 +28,7 @@ public class LevelLoader : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         
         transitionAnimation = Instantiate(transitionAnimationReference, transform.transform.Find("Transition Canvas"));
-
         transitionAnimation.SetActive(false);
-
         earth = GameObject.FindGameObjectWithTag("Earth");
     }
 
@@ -60,7 +58,6 @@ public class LevelLoader : MonoBehaviour
         if (!transitioning)
         {
             StartCoroutine(SceneTransition(sceneType));
-
             transitioning = true;
         }
     }
@@ -68,19 +65,15 @@ public class LevelLoader : MonoBehaviour
     private IEnumerator SceneTransition(string sceneType)
     {
         PlayTransition();
-
         yield return new WaitForSeconds(2f);
-
         switch (sceneType)
         {
             case "Next":
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 break;
-
             case "Menu":
                 SceneManager.LoadScene("SimonMenuTest");
                 break;
-
             default:
                 SceneManager.LoadScene(sceneType);
                 break;
@@ -90,7 +83,6 @@ public class LevelLoader : MonoBehaviour
     private void PlayTransition()
     {
         transitionAnimation.SetActive(true);
-
         StartCoroutine(EndTransition());
     }
 
@@ -99,15 +91,11 @@ public class LevelLoader : MonoBehaviour
         yield return new WaitForSeconds(4f);
 
         Destroy(transitionAnimation);
-
         transitionAnimation = Instantiate(transitionAnimationReference, transform.transform.Find("Transition Canvas"));
-
         transitionAnimation.SetActive(false);
-
         transitioning = false;
-
         earth = GameObject.FindGameObjectWithTag("Earth");
 
-        Debug.Log("Transition Reset");
+        // Debug.Log("Transition Reset");
     }
 }
