@@ -119,8 +119,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59e9614bf44edd545b0b03bfa3b2aa62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goalIntensity: 0.75
-  goalTimer: 5
+  windIntensity: 1
+  marginOfError: 0.5
+  timeWindow: 1
+  goalIntensity: 4
+  intensityChange: 1
+  goalTimer: 3
   northernLights: {fileID: 3105823959543022265}
   southernLights: {fileID: 6178536912862950081}
 --- !u!58 &2895776567381956676
