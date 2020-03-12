@@ -35,6 +35,9 @@ public class LevelLoader : MonoBehaviour
     private void Start()
     {
         transitioning = false;
+        zoom = Camera.main.orthographicSize;
+        camPosX = Camera.main.transform.position.x;
+        camPosY = Camera.main.transform.position.y;
     }
 
     private void Update()
@@ -55,6 +58,7 @@ public class LevelLoader : MonoBehaviour
 
     public void GoToScene(string sceneType)
     {
+        ZoomCamera();
         if (!transitioning)
         {
             StartCoroutine(SceneTransition(sceneType));
@@ -64,6 +68,7 @@ public class LevelLoader : MonoBehaviour
 
     private IEnumerator SceneTransition(string sceneType)
     {
+        yield return new WaitForSeconds(3f);
         PlayTransition();
         yield return new WaitForSeconds(2f);
         switch (sceneType)
@@ -80,6 +85,18 @@ public class LevelLoader : MonoBehaviour
         }
     }
 
+    private float zoom;
+    private float camPosX;
+    private float camPosY;
+    private void ZoomCamera()
+    {
+        zoom += (2.0f - zoom) * 0.01f;
+        camPosX += (GameObject.Find("Earth").transform.position.x - camPosX) * 0.01f;
+        camPosY += (GameObject.Find("Earth").transform.position.y - camPosY) * 0.01f;
+        Camera.main.orthographicSize = zoom;
+        Camera.main.transform.position = new Vector3(camPosX, camPosY, -10);
+    }
+
     private void PlayTransition()
     {
         transitionAnimation.SetActive(true);
@@ -89,7 +106,6 @@ public class LevelLoader : MonoBehaviour
     private IEnumerator EndTransition()
     {
         yield return new WaitForSeconds(4f);
-
         Destroy(transitionAnimation);
         transitionAnimation = Instantiate(transitionAnimationReference, transform.transform.Find("Transition Canvas"));
         transitionAnimation.SetActive(false);
