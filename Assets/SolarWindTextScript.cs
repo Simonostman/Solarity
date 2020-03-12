@@ -16,7 +16,7 @@ public class SolarWindTextScript : MonoBehaviour
     {
         gradientState = 0f;
 
-        active = true;
+        active = false;
 
         text = GetComponent<Text>();
 
@@ -41,32 +41,37 @@ public class SolarWindTextScript : MonoBehaviour
 
     void Update()
     {
-        if (active)
+        if (active || gradientState > 0.5f)
         {
             gradientState += Time.deltaTime * pulseSpeed;
+        }
+        else
+        {
+            gradientState -= Time.deltaTime * pulseSpeed;
+            
+            if (gradientState < 0f)
+            {
+                gradientState = 0f;
+            }
+        }
 
-            if (gradientState > 1f)
+        if (gradientState > 1f)
+        {
+            if (active)
             {
                 gradientState -= 1f;
             }
+            else
+            {
+                gradientState = 0f;
+            }
+        }
 
-            text.color = textGradient.Evaluate(gradientState);
-        }
-        else
-        {
-            gradientState = 0f;
-        }
+        text.color = textGradient.Evaluate(gradientState);
     }
 
-    public void SetState(bool activate)
+    public void SetState(bool state)
     {
-        if (activate)
-        {
-            active = true;
-        }
-        else
-        {
-            active = false;
-        }
+        active = state;
     }
 }

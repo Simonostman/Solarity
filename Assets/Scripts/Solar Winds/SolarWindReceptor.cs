@@ -88,4 +88,19 @@ public class SolarWindReceptor : MonoBehaviour
     {
         return achievedTarget;
     }
+
+    public float GetPercentage()
+    {
+        return currentIntensity / (goalIntensity / timeWindow);
+    }
+
+    public bool GetCorrect()
+    {
+        if (currentIntensity > goalIntensity / timeWindow - marginOfError && currentIntensity < goalIntensity / timeWindow + marginOfError)
+        {
+            return true;
+        }
+
+        return false;
+    }
 }
