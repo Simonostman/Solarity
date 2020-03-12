@@ -44,7 +44,7 @@ public class SolarWindReceptor : MonoBehaviour
             addIntensity = 0;
         }
 
-        if (currentIntensity > goalIntensity - marginOfError && currentIntensity < goalIntensity + marginOfError)
+        if (currentIntensity > goalIntensity / timeWindow - marginOfError && currentIntensity < goalIntensity / timeWindow + marginOfError)
         {
             goalCounter += Time.deltaTime;
 
