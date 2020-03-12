@@ -56,23 +56,25 @@ public class Aurora
     {
         Gradient gradient = new Gradient();
         GradientColorKey[] colorKey = new GradientColorKey[4];
-        GradientAlphaKey[] alphaKey = new GradientAlphaKey[2];
+        GradientAlphaKey[] alphaKey = new GradientAlphaKey[3];
 
         Color[] colours = GetColours();
 
         colorKey[0].color = colours[0];
         colorKey[0].time = 0f;
         colorKey[1].color = colours[1];
-        colorKey[1].time = 0.33f;
+        colorKey[1].time = 0.4f;
         colorKey[2].color = colours[2];
-        colorKey[2].time = 0.67f;
-        colorKey[3].color = new Color(1, 1, 1, 0);
+        colorKey[2].time = 0.65f;
+        colorKey[3].color = colours[2];
         colorKey[3].time = 1f;
 
         alphaKey[0].alpha = 1f;
         alphaKey[0].time = 0f;
-        alphaKey[1].alpha = 1f;
-        alphaKey[1].time = 1f;
+        alphaKey[1].alpha = 0.75f;
+        alphaKey[1].time = 0.8f;
+        alphaKey[2].alpha = 0f;
+        alphaKey[2].time = 1f;
 
         gradient.SetKeys(colorKey, alphaKey);
 
@@ -122,7 +124,7 @@ public class Aurora
                 return returnCol;
 
             default:
-                returnCol = new Color(hueF * 0.625f, hueF, hueF * 0.95f, intensity);
+                returnCol = new Color(hueF * 0.25f, hueF * 0.625f, hueF, intensity);
                 return returnCol;
 
         }
