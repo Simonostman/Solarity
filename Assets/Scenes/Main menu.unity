@@ -1076,8 +1076,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Lead Programmer - Lukas Clausson\nProgrammer - Daniel Michaneck\n\nDesigner
-    - Simon \xD6stman\nVFX      -     Erik Glastra\n2D Artist - Julia Iljina\n3D
+  m_text: "Lead Programmer - Lukas Clausson\nProgrammer - Daniel Michaneck\nDesigner
+    - Simon \xD6stman\n\nVFX      -     Erik Glastra\n2D Artist - Julia Iljina\n3D
     Artist - Oliver Marklund"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
