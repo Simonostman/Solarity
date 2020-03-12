@@ -699,18 +699,6 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 432644, guid: c2e22098ce7c8da4590cceb5113bd50e, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 432644, guid: c2e22098ce7c8da4590cceb5113bd50e, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 432644, guid: c2e22098ce7c8da4590cceb5113bd50e, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.03
-      objectReference: {fileID: 0}
     - target: {fileID: 3361438, guid: c2e22098ce7c8da4590cceb5113bd50e, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -726,6 +714,21 @@ PrefabInstance:
     - target: {fileID: 12270238, guid: c2e22098ce7c8da4590cceb5113bd50e, type: 3}
       propertyPath: m_Size
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2895776567381956676, guid: c2e22098ce7c8da4590cceb5113bd50e,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -3.9949834
+      objectReference: {fileID: 0}
+    - target: {fileID: 2895776567381956676, guid: c2e22098ce7c8da4590cceb5113bd50e,
+        type: 3}
+      propertyPath: m_Radius
+      value: 23.027355
+      objectReference: {fileID: 0}
+    - target: {fileID: 2895776567381956676, guid: c2e22098ce7c8da4590cceb5113bd50e,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.22295713
       objectReference: {fileID: 0}
     - target: {fileID: 3105823959543022264, guid: c2e22098ce7c8da4590cceb5113bd50e,
         type: 3}
@@ -785,11 +788,6 @@ PrefabInstance:
     - target: {fileID: 5740383948030886279, guid: c2e22098ce7c8da4590cceb5113bd50e,
         type: 3}
       propertyPath: gravityStrenght
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5889339644949791817, guid: c2e22098ce7c8da4590cceb5113bd50e,
-        type: 3}
-      propertyPath: timeWindow
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6026524967533482105, guid: c2e22098ce7c8da4590cceb5113bd50e,
@@ -941,7 +939,7 @@ PrefabInstance:
     - target: {fileID: 6019483482751309309, guid: ddf3a975e87dccd4f91980f8f2d05cba,
         type: 3}
       propertyPath: lifetime
-      value: 25
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddf3a975e87dccd4f91980f8f2d05cba, type: 3}
@@ -1101,8 +1099,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44b49f9bd4d419046a4ebbb13f7077fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xSpread: 2
-  zSpread: 2
+  xSpread: 2.2
+  zSpread: 2.2
   yOffset: 0
   centerPoint: {fileID: 758748642}
   rotSpeed: 0.5
@@ -1235,7 +1233,7 @@ PrefabInstance:
     - target: {fileID: 6019483482751309309, guid: ddf3a975e87dccd4f91980f8f2d05cba,
         type: 3}
       propertyPath: lifetime
-      value: 25
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddf3a975e87dccd4f91980f8f2d05cba, type: 3}
