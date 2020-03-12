@@ -11,6 +11,8 @@ public class LevelLoader : MonoBehaviour
     private GameObject transitionAnimation;
     private bool transitioning;
 
+    private GameObject earth;
+
     private void Awake()
     {
         if (instance == null)
@@ -28,6 +30,8 @@ public class LevelLoader : MonoBehaviour
         transitionAnimation = Instantiate(transitionAnimationReference, transform.transform.Find("Transition Canvas"));
 
         transitionAnimation.SetActive(false);
+
+        earth = GameObject.FindGameObjectWithTag("Earth");
     }
 
     private void Start()
@@ -40,6 +44,14 @@ public class LevelLoader : MonoBehaviour
         if (Input.GetKey(KeyCode.N))
         {
             GoToScene("MainScene");
+        }
+
+        if (earth != null)
+        {
+            if (earth.GetComponent<SolarWindReceptor>().DidWeWin())
+            {
+                GoToScene("Next");
+            }
         }
     }
 
@@ -93,6 +105,8 @@ public class LevelLoader : MonoBehaviour
         transitionAnimation.SetActive(false);
 
         transitioning = false;
+
+        earth = GameObject.FindGameObjectWithTag("Earth");
 
         Debug.Log("Transition Reset");
     }
