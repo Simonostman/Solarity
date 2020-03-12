@@ -44,7 +44,7 @@ public class AttractionPoint : MonoBehaviour
         if(pathCreator != null)
         {
             pathLenght = pathCreator.path.length;
-            currentPathPos = pathLenght / 4;
+            currentPathPos = pathLenght / 2;
         }
     }
 

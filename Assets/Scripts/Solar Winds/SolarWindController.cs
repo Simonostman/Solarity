@@ -42,14 +42,14 @@ public class SolarWindController : MonoBehaviour
         attractionPoints = FindObjectsOfType<AttractionPoint>();
         foreach (var point in attractionPoints)
         {
-            Vector3 lookDir = (point.satellite.transform.position - transform.position).normalized;
+            Vector3 lookDir = (point.satellite.transform.position - transform.position);
             float angle;
             if(point.negativePolarity)  angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
             else                        angle = -Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
             Quaternion lookRot = Quaternion.AngleAxis(angle, Vector3.forward);
             
             float dst = Vector3.Distance(transform.position, point.transform.position);
-            float pull = 9.81f * (point.GetComponent<AttractionPoint>().gravityStrenght / 100) / Mathf.Pow(dst, 2);
+            float pull = 9.81f * ((point.GetComponent<AttractionPoint>().gravityStrenght / 100) / Mathf.Pow(dst, 2));
 
             transform.rotation = Quaternion.Slerp(transform.rotation, lookRot, Time.deltaTime * pull);
         }
