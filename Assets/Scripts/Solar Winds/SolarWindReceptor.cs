@@ -44,7 +44,7 @@ public class SolarWindReceptor : MonoBehaviour
             addIntensity = 0;
         }
 
-        if (currentIntensity > goalIntensity - marginOfError && currentIntensity < goalIntensity + marginOfError)
+        if (currentIntensity > goalIntensity / timeWindow - marginOfError && currentIntensity < goalIntensity / timeWindow + marginOfError)
         {
             goalCounter += Time.deltaTime;
 
@@ -80,8 +80,7 @@ public class SolarWindReceptor : MonoBehaviour
         if (other.name == "Wind")
         {
             addIntensity += windIntensity;
-            Destroy(other.GetComponent<SolarWindController>().effect.gameObject);
-            Destroy(other);
+            other.GetComponent<SolarWindController>().dead = true;
         }
     }
 
