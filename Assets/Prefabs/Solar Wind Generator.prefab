@@ -47,5 +47,5 @@ MonoBehaviour:
   lifetime: 10
   effectPrefab: {fileID: 6015062693111309182, guid: 57ec3cfb1556b5c4d9f1dd86de920c02,
     type: 3}
-  spanwFrequency: 7
+  spanwFrequency: 2
   maxAngle: 10
