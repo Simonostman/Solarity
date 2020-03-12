@@ -35,7 +35,7 @@ public class AttractionPoint : MonoBehaviour
             if(transform.eulerAngles.z % 360 > 90 || transform.eulerAngles.z % 360 < -90)
             {
                 Array.Reverse(points);
-                Debug.Log(transform.eulerAngles.z % 360);
+                // Debug.Log(transform.eulerAngles.z % 360);
             }
             lineRenderer.SetPositions(points);
 
@@ -83,16 +83,16 @@ public class AttractionPoint : MonoBehaviour
     }
 
     private void Update() {
-        if(Input.GetMouseButtonUp(1))
+        if(Input.GetMouseButtonUp(0))
             dragging = false;
     }
 
     private void OnMouseOver()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(1))
             negativePolarity = !negativePolarity;
 
-        if(Input.GetMouseButtonDown(1))
+        if(Input.GetMouseButtonDown(0))
         {
             prevMousePos = currentMousePos = Input.mousePosition;
             dragging = true;

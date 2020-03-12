@@ -5,12 +5,12 @@ using UnityEngine.VFX;
 
 public class SolarWindReceptor : MonoBehaviour
 {
-    public float windIntensity;
-    public float marginOfError;
-    public float timeWindow;
-    public float goalIntensity;
-    public float intensityChange;
-    public float goalTimer;
+    public float windIntensity = 0.25f;
+    public float marginOfError = 1;
+    public float timeWindow = 1;
+    public float goalIntensity = 1.5f;
+    public float intensityChange = 1.0f;
+    public float goalTimer = 2.0f;
 
     private float timeTime;
     private float currentIntensity;
@@ -53,6 +53,8 @@ public class SolarWindReceptor : MonoBehaviour
             {
                 achievedTarget = true;
 
+
+
                 Debug.Log("Achieved target");
             }
         }
@@ -61,7 +63,7 @@ public class SolarWindReceptor : MonoBehaviour
             goalCounter = 0;
         }
 
-        Debug.Log("AddIntensity: " + addIntensity + " CurrentIntensity: " + currentIntensity);
+        //Debug.Log("AddIntensity: " + addIntensity + " CurrentIntensity: " + currentIntensity);
 
         if (setIntensity < currentIntensity)
         {
@@ -85,7 +87,7 @@ public class SolarWindReceptor : MonoBehaviour
         if (other.name == "Wind")
         {
             addIntensity += windIntensity;
-            Debug.Log("DESTROYED");
+            Destroy(other.GetComponent<SolarWindController>().effect.gameObject);
             Destroy(other);
         }
     }
