@@ -85,7 +85,7 @@ Transform:
   m_GameObject: {fileID: 157262}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_Children:
   - {fileID: 420960}
   - {fileID: 6937190565589894582}
@@ -124,7 +124,7 @@ MonoBehaviour:
   timeWindow: 1
   goalIntensity: 4
   intensityChange: 1
-  goalTimer: 3
+  goalTimer: 4
   northernLights: {fileID: 3105823959543022265}
   southernLights: {fileID: 6178536912862950081}
 --- !u!58 &2895776567381956676
@@ -140,9 +140,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -3.3260882, y: 0}
   serializedVersion: 2
-  m_Radius: 47.55
+  m_Radius: 24.365145
 --- !u!50 &8141533216432629688
 Rigidbody2D:
   serializedVersion: 4
