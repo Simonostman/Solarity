@@ -27,7 +27,6 @@ public class SolarWindReceptor : MonoBehaviour
     {
         aurora = new Aurora();
         //northernLights = transform.Find("Northern Lights").gameObject;
-
         timeTime = 0f;
         achievedTarget = false;
     }
@@ -52,10 +51,8 @@ public class SolarWindReceptor : MonoBehaviour
             if (goalCounter >= goalTimer)
             {
                 achievedTarget = true;
-
-
-
-                Debug.Log("Achieved target");
+                FindObjectOfType<LevelLoader>().GoToScene("Next");
+                //Debug.Log("Achieved target");
             }
         }
         else
@@ -66,13 +63,9 @@ public class SolarWindReceptor : MonoBehaviour
         //Debug.Log("AddIntensity: " + addIntensity + " CurrentIntensity: " + currentIntensity);
 
         if (setIntensity < currentIntensity)
-        {
             setIntensity += intensityChange * Time.deltaTime;
-        }
         else if (setIntensity > currentIntensity)
-        {
             setIntensity -= intensityChange * Time.deltaTime;
-        }
 
         aurora.SetIntensity((setIntensity / timeWindow) / 10);
 
