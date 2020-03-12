@@ -111,6 +111,10 @@ public class LevelLoader : MonoBehaviour
         transitionAnimation.SetActive(false);
         transitioning = false;
         earth = GameObject.FindGameObjectWithTag("Earth");
+        
+        zoom = Camera.main.orthographicSize;
+        camPosX = Camera.main.transform.position.x;
+        camPosY = Camera.main.transform.position.y;
 
         // Debug.Log("Transition Reset");
     }
