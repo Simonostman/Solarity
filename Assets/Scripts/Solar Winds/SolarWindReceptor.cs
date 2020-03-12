@@ -80,8 +80,7 @@ public class SolarWindReceptor : MonoBehaviour
         if (other.name == "Wind")
         {
             addIntensity += windIntensity;
-            Destroy(other.GetComponent<SolarWindController>().effect.gameObject);
-            Destroy(other);
+            other.GetComponent<SolarWindController>().dead = true;
         }
     }
 
