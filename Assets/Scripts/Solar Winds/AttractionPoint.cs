@@ -32,11 +32,17 @@ public class AttractionPoint : MonoBehaviour
         {
             lineRenderer.sortingOrder = -10;
             Vector3[] points = pathCreator.path.localPoints;
-            if(transform.eulerAngles.z % 360 > 90 || transform.eulerAngles.z % 360 < -90)
+
+            float angle = transform.eulerAngles.z;
+            if(angle > 180)
+                angle -= 360;
+            if(angle % 360 > 90 || angle % 360 < -90)
             {
                 Array.Reverse(points);
-                // Debug.Log(transform.eulerAngles.z % 360);
             }
+
+            Debug.Log(angle);
+            
             lineRenderer.SetPositions(points);
 
         }
@@ -50,7 +56,9 @@ public class AttractionPoint : MonoBehaviour
 
     private void FixedUpdate()
     {
-        satellite.transform.position = pathCreator.path.GetPointAtDistance(currentPathPos, EndOfPathInstruction.Stop);
+        Vector3 point = pathCreator.path.GetPointAtDistance(currentPathPos, EndOfPathInstruction.Stop);
+        satellite.transform.position = new Vector3(point.x, point.y, 0);
+
         GetComponent<CircleCollider2D>().offset = new Vector2(satellite.transform.localPosition.x, 0);
         waveIn.transform.position = satellite.transform.position;
         waveOut.transform.position = satellite.transform.position;
