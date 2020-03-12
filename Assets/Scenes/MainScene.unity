@@ -200,7 +200,7 @@ PrefabInstance:
     - target: {fileID: 3072863641385505457, guid: 37fad3a6f32551f4fa513626be9ccbc8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3072863641385505457, guid: 37fad3a6f32551f4fa513626be9ccbc8,
         type: 3}
@@ -359,7 +359,7 @@ PrefabInstance:
     - target: {fileID: 1055921701663246445, guid: 557a28f6f2c175342af14b12286c597f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1055921701663246445, guid: 557a28f6f2c175342af14b12286c597f,
         type: 3}
@@ -380,6 +380,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MagnetSatellite
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055921701663246447, guid: 557a28f6f2c175342af14b12286c597f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 557a28f6f2c175342af14b12286c597f, type: 3}
@@ -616,6 +621,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Earth
       objectReference: {fileID: 0}
+    - target: {fileID: 157262, guid: c2e22098ce7c8da4590cceb5113bd50e, type: 3}
+      propertyPath: m_TagString
+      value: Earth
+      objectReference: {fileID: 0}
     - target: {fileID: 432644, guid: c2e22098ce7c8da4590cceb5113bd50e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.49
@@ -646,7 +655,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 432644, guid: c2e22098ce7c8da4590cceb5113bd50e, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 432644, guid: c2e22098ce7c8da4590cceb5113bd50e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -711,7 +720,32 @@ PrefabInstance:
     - target: {fileID: 5889339644949791817, guid: c2e22098ce7c8da4590cceb5113bd50e,
         type: 3}
       propertyPath: timeWindow
-      value: 100
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889339644949791817, guid: c2e22098ce7c8da4590cceb5113bd50e,
+        type: 3}
+      propertyPath: changeSpeed
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889339644949791817, guid: c2e22098ce7c8da4590cceb5113bd50e,
+        type: 3}
+      propertyPath: windIntensity
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889339644949791817, guid: c2e22098ce7c8da4590cceb5113bd50e,
+        type: 3}
+      propertyPath: intensityChange
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889339644949791817, guid: c2e22098ce7c8da4590cceb5113bd50e,
+        type: 3}
+      propertyPath: goalTimer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889339644949791817, guid: c2e22098ce7c8da4590cceb5113bd50e,
+        type: 3}
+      propertyPath: goalIntensity
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6026524967533482105, guid: c2e22098ce7c8da4590cceb5113bd50e,
         type: 3}
@@ -895,7 +929,7 @@ PrefabInstance:
     - target: {fileID: 492280555830765893, guid: 9ad39245ecdbd5f42a5f363e44a6c531,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 492280555830765893, guid: 9ad39245ecdbd5f42a5f363e44a6c531,
         type: 3}
@@ -969,7 +1003,7 @@ PrefabInstance:
     - target: {fileID: 6344734341181544283, guid: 8d0070f8272b13248b85640a3e41e2f6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6344734341181544283, guid: 8d0070f8272b13248b85640a3e41e2f6,
         type: 3}
@@ -1488,7 +1522,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: de2862e517481aa4b98ae8969fd8db4b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: de2862e517481aa4b98ae8969fd8db4b,
         type: 3}
@@ -1572,7 +1606,7 @@ PrefabInstance:
     - target: {fileID: 6386058078195967156, guid: e980699d4e9002440bad1622cedc9d53,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6386058078195967156, guid: e980699d4e9002440bad1622cedc9d53,
         type: 3}
