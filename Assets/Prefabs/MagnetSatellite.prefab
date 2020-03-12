@@ -50,6 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   negativePolarity: 0
   gravityStrenght: 10
+  satellite: {fileID: 0}
 --- !u!58 &8583957398989262274
 CircleCollider2D:
   m_ObjectHideFlags: 0
