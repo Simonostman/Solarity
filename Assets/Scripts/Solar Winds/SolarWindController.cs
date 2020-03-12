@@ -14,12 +14,9 @@ public class SolarWindController : MonoBehaviour
     private float lifeTimer;
 
     // Effect
+
     public GameObject effect;
     public GameObject effectPrefab;
-    private EffectPositionHandler eph;
-
-    public GameObject effect2;
-    public GameObject effect2Prefab;
 
     void Start()
     {
@@ -29,24 +26,14 @@ public class SolarWindController : MonoBehaviour
 
     public void UpdateEffectPosition(Transform parent)
     {
-        // if(effect == null)
-        // {
-        //     effect = Instantiate(effectPrefab);
-        //     effect.transform.parent = parent;
-        //     eph = effect.GetComponent<EffectPositionHandler>();
-        // }
-
-        // eph.target.transform.position = transform.position;
-        // eph.effect.transform.position = parent.position;
-
-        if(effect2 == null)
+        if(effect == null)
         {
-            effect2 = Instantiate(effect2Prefab, parent);
-            effect2.transform.position = transform.position;
+            effect = Instantiate(effectPrefab, parent);
+            effect.transform.position = transform.position;
         }
         else
         {
-            effect2.transform.position = transform.position;
+            effect.transform.position = transform.position;
         }
     }
 
@@ -55,17 +42,16 @@ public class SolarWindController : MonoBehaviour
         attractionPoints = FindObjectsOfType<AttractionPoint>();
         foreach (var point in attractionPoints)
         {
-            if(point.activated)
-            {
-                Vector3 lookDir = (point.transform.position - transform.position).normalized;
-                float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
-                Quaternion lookRot = Quaternion.AngleAxis(angle, Vector3.forward);
-                
-                float dst = Vector3.Distance(transform.position, point.transform.position);
-                float pull = point.GetComponent<AttractionPoint>().gravityStrenght / Mathf.Pow(dst, 2);
+            Vector3 lookDir = (point.satellite.transform.position - transform.position).normalized;
+            float angle;
+            if(point.negativePolarity)  angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
+            else                        angle = -Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
+            Quaternion lookRot = Quaternion.AngleAxis(angle, Vector3.forward);
+            
+            float dst = Vector3.Distance(transform.position, point.transform.position);
+            float pull = 9.81f * (point.GetComponent<AttractionPoint>().gravityStrenght / 100) / Mathf.Pow(dst, 2);
 
-                transform.rotation = Quaternion.Slerp(transform.rotation, lookRot, Time.deltaTime * pull);
-            }
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRot, Time.deltaTime * pull);
         }
 
         GetComponent<Rigidbody2D>().velocity = transform.right * windSpeed;
@@ -73,7 +59,6 @@ public class SolarWindController : MonoBehaviour
         lifeTimer += Time.deltaTime % 60;
         if(lifeTimer > lifetime)
         {
-            //effect.GetComponent<EffectPositionHandler>().Stop();
             dead = true;
         }
     }

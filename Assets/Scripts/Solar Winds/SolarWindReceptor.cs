@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class SolarWindReceptor : MonoBehaviour
 {
@@ -13,8 +14,14 @@ public class SolarWindReceptor : MonoBehaviour
     private float currentIntensity;
     private bool achievedTarget;
 
+    private Aurora aurora;
+    public GameObject northernLights;
+
     void Start()
     {
+        aurora = new Aurora();
+        //northernLights = transform.Find("Northern Lights").gameObject;
+
         timeTime = 0f;
         achievedTarget = false;
     }
@@ -39,6 +46,11 @@ public class SolarWindReceptor : MonoBehaviour
                 currentIntensity = 0f;
             }
         }
+
+        //aurora.SetIntensity(currentIntensity / timeWindow);
+        aurora.SetIntensity(currentIntensity/timeWindow);
+
+        northernLights.GetComponent<VisualEffect>().SetGradient("Hue", aurora.GetGradient());
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -46,6 +58,7 @@ public class SolarWindReceptor : MonoBehaviour
         if (other.name == "Wind")
         {
             currentIntensity += windIntensity;
+            Debug.Log("DESTROYED");
             Destroy(other);
         }
     }
