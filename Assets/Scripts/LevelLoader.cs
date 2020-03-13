@@ -81,6 +81,7 @@ public class LevelLoader : MonoBehaviour
 
         transform.Find("Transition Canvas").transform.Find("Level Complete Text").GetComponent<LevelCompleteTextScript>().SetState(false);
         transform.Find("Transition Canvas").transform.Find("Solar Wind Percent Text").GetComponent<SolarWindPercentScript>().SetState(true);
+        transform.Find("Transition Canvas").transform.Find("New Level Text").GetComponent<NewLevelTextScript>().SetState(true);
 
         switch (sceneType)
         {
