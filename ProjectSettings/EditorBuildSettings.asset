@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main Scenes/Main menu.unity
+    path: Assets/Scenes/Main Scenes/Main Menu.unity
     guid: 910fff76db1464540b4c409197516092
   - enabled: 1
     path: Assets/Scenes/Main Scenes/Main Level 1.unity
@@ -17,9 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Scenes/Main Level 3.unity
     guid: 99ef38dfdc283274a8f1226ff1a15398
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Main Scenes/Main Level 4.unity
+    guid: 9a27af02f9bd74c42b6af2efb4240c9e
   - enabled: 1
     path: Assets/Scenes/Main Scenes/Main Level 5.unity
     guid: 90714b4dba9ee7d4784f31b38bb6c95a
@@ -33,12 +33,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Scenes/Main Level 8.unity
     guid: 20bbce1b91dd33e4991580a79f54c1fd
   - enabled: 1
-    path: Assets/Scenes/Main Scenes/Main Level 4.unity
-    guid: 3ade37594af15e24db25f7b61f28f418
+    path: Assets/Scenes/Main Scenes/Main Level 9.unity
+    guid: f287e8acbbccc7f4aa7ddd5fcdbdef2b
   - enabled: 1
     path: Assets/Scenes/Main Scenes/Main Level 10.unity
     guid: 818df6fcfdb5dc54b9a55e8cda35d471
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Main Scenes/Game Complete.unity
+    guid: e8b7de1394008d546959647302c27b49
   m_configObjects: {}
