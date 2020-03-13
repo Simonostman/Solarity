@@ -26,9 +26,9 @@ public class LevelCompleteTextScript : MonoBehaviour
         alphaKey[1].alpha = 1f;
 
         colorKey[0].time = 0f;
-        colorKey[0].color = Color.magenta;
+        colorKey[0].color = Color.black;
         colorKey[1].time = 1f;
-        colorKey[1].color = Color.magenta;
+        colorKey[1].color = Color.black;
 
         gradient.SetKeys(colorKey, alphaKey);
 
