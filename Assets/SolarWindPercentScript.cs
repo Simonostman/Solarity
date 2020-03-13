@@ -62,7 +62,7 @@ public class SolarWindPercentScript : MonoBehaviour
 
     void Update()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 0)
+        if (SceneManager.GetActiveScene().buildIndex == 0 || SceneManager.GetActiveScene().name == "Game Complete")
         {
             gradientState = 0f;
             active = false;
