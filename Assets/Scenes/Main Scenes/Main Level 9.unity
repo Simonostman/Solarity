@@ -1154,7 +1154,7 @@ MonoBehaviour:
   zSpread: 2.2
   yOffset: 0
   centerPoint: {fileID: 758748642}
-  rotSpeed: 0.5
+  rotSpeed: 0.12
   rotateClockwise: 1
 --- !u!1001 &1205865758
 PrefabInstance:
