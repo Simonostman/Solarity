@@ -43,7 +43,7 @@ public class NewLevelTextScript : MonoBehaviour
     {
         if (active)
         {
-            if (SceneManager.GetActiveScene().buildIndex > 0)
+            if (SceneManager.GetActiveScene().buildIndex > 0 && SceneManager.GetActiveScene().name != "Game Complete")
             {
                 text.text = "Level " + SceneManager.GetActiveScene().buildIndex.ToString();
             }
