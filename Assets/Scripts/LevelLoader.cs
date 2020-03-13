@@ -78,13 +78,17 @@ public class LevelLoader : MonoBehaviour
         PlayTransition();
         yield return new WaitForSeconds(2f);
         transitioning = false;
+
+        transform.Find("Transition Canvas").transform.Find("Level Complete Text").GetComponent<LevelCompleteTextScript>().SetState(false);
+        transform.Find("Transition Canvas").transform.Find("Solar Wind Percent Text").GetComponent<SolarWindPercentScript>().SetState(true);
+
         switch (sceneType)
         {
             case "Next":
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 break;
             case "Menu":
-                SceneManager.LoadScene("SimonMenuTest");
+                SceneManager.LoadScene("Main Menu");
                 break;
             default:
                 SceneManager.LoadScene(sceneType);

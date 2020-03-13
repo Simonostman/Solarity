@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine.Audio;
 using System;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class SoundManager : MonoBehaviour
 {
@@ -32,6 +31,8 @@ public class SoundManager : MonoBehaviour
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
         }
+
+        Play("Ambient piano");
     }
 
     public void Play(string name)
