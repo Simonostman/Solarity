@@ -43,10 +43,15 @@ public class LevelLoader : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.N))
+        if (Input.GetKey("escape"))
         {
-            GoToScene("MainScene");
+            GoToScene("Main Menu");
         }
+
+        //if (Input.GetKey(KeyCode.N))
+        //{
+        //    GoToScene("MainScene");
+        //}
 
         if (earth != null)
         {
