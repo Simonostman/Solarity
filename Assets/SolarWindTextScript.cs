@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SolarWindTextScript : MonoBehaviour
 {
@@ -41,6 +42,12 @@ public class SolarWindTextScript : MonoBehaviour
 
     void Update()
     {
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            gradientState = 0f;
+            active = false;
+        }
+
         if (active || gradientState > 0.5f)
         {
             gradientState += Time.deltaTime * pulseSpeed;

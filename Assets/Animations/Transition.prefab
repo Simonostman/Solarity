@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 182061757380018690}
   - component: {fileID: 1917596380679137843}
   - component: {fileID: 749473667426451216}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Transition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c1f8da464e212f24791b70dae9e9331d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 89266a210663ad944bbd1da6c1e67761, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

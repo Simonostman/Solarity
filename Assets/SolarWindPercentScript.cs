@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SolarWindPercentScript : MonoBehaviour
 {
@@ -61,10 +62,15 @@ public class SolarWindPercentScript : MonoBehaviour
 
     void Update()
     {
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            gradientState = 0f;
+            active = false;
+        }
+
         if (GameObject.FindGameObjectWithTag("Earth").GetComponent<SolarWindReceptor>().DidWeWin())
         {
             active = false;
-            warningTextObject.GetComponent<SolarWindTextScript>().SetState(false);
         }
 
         warningTextObject.GetComponent<SolarWindTextScript>().SetState(false);

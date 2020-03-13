@@ -59,7 +59,7 @@ public class LevelLoader : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(transitioning)
+        if(transitioning && SceneManager.GetActiveScene().buildIndex > 0)
             ZoomCamera();
     }
 
@@ -74,7 +74,8 @@ public class LevelLoader : MonoBehaviour
 
     private IEnumerator SceneTransition(string sceneType)
     {
-        yield return new WaitForSeconds(3f);
+        if (SceneManager.GetActiveScene().buildIndex > 0)
+            yield return new WaitForSeconds(3f);
         PlayTransition();
         yield return new WaitForSeconds(2f);
         transitioning = false;
