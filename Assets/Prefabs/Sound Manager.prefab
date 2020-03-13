@@ -43,3 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7689b53c48791c4ba2d07354d5441b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Sounds:
+  - Name: Ambient piano
+    clip: {fileID: 8300000, guid: ddebcaaeb68a39742a612cd5e33433c1, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    music: 1
+    source: {fileID: 0}
