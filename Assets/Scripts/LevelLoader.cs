@@ -45,7 +45,7 @@ public class LevelLoader : MonoBehaviour
     {
         if (Input.GetKey("escape"))
         {
-            GoToScene("Main Menu");
+            GoToScene("Main menu");
         }
 
         //if (Input.GetKey(KeyCode.N))
@@ -70,10 +70,13 @@ public class LevelLoader : MonoBehaviour
 
     public void GoToScene(string sceneType)
     {
-        if (!transitioning)
+        if (sceneType != SceneManager.GetActiveScene().name)
         {
-            StartCoroutine(SceneTransition(sceneType));
-            transitioning = true;
+            if (!transitioning)
+            {
+                transitioning = true;
+                StartCoroutine(SceneTransition(sceneType));
+            }
         }
     }
 
@@ -95,7 +98,7 @@ public class LevelLoader : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 break;
             case "Menu":
-                SceneManager.LoadScene("Main Menu");
+                SceneManager.LoadScene("Main menu");
                 break;
             default:
                 SceneManager.LoadScene(sceneType);
